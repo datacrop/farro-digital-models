@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="eu:faredge:drpp:dcd" xmlns:dcd="eu:faredge:drpp:dcd">
+
+    <xs:element name="DCD">
+        <xs:annotation>
+            <xs:documentation>FAR-Edge Data Channel Descriptor</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:dateTime" name="expirationDateTime"/>
+                <xs:element type="xs:dateTime" name="validFrom"/>
+                <xs:element name="dataSourceManifestID" type="xs:anyURI">
+                    <xs:annotation>
+                        <xs:documentation>The ID of the Data Source Manifest the Data Channel Descriptor points to.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="dataConsumerManifestID" nillable="false" type="xs:anyURI">
+                    <xs:annotation>
+                        <xs:documentation>The ID of the Data Consummer Manifest the Data Channel Descriptor points to.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:anyURI">
+                <xs:annotation>
+                    <xs:documentation>Uniquely identifies the Data Channel as a URI</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

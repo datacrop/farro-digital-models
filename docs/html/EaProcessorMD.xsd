@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Author: Nikos Kefalakis (nkef@ait.edu.gr) -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="eu:faredge:ea:processormd" xmlns:eapmd="eu:faredge:ea:processormd">
+
+
+    <xs:element name="EaProcessorMD">
+        <xs:annotation>
+            <xs:documentation>FAR-Edge Edge Analytics Procesor Meta-Data</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1" maxOccurs="1" name="processorType" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>The type of the Processor</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="version" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>The version of the processor type</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="copyright" type="xs:string" maxOccurs="1" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Processor Owner</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="0" maxOccurs="1" name="description" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>Deacription of the Processor</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="1" maxOccurs="1" name="processorLocation" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>The physical or relative location of the processor library</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="eapmd:additionalInformation"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="eapmd:ProcessorConfigs"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:anyURI" use="optional">
+                <xs:annotation>
+                    <xs:documentation>The Processor ID</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="name" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>The processor name</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="ProcessorConfigs">
+        <xs:annotation>
+            <xs:documentation>Edge Analytics Processor Configurations</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="attribute" maxOccurs="unbounded" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>EA Processor List of Attributes</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="DefaultValue" type="xs:anyType" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>A predefined default value for an attribute.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="Value" type="xs:anyType" minOccurs="1">
+                                <xs:annotation>
+                                    <xs:documentation>Element describing the value of an attribute.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="name" type="xs:string"/>
+                        <xs:attribute name="unit" type="xs:string"/>
+                        <xs:attribute name="dataType" type="xs:string"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+
+    <xs:element name="additionalInformation" type="xs:anyType">
+        <xs:annotation>
+            <xs:documentation>Optional auxiliary field that may contain any additional information</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+
+
+</xs:schema>
