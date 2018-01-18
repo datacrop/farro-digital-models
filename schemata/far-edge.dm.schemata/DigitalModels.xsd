@@ -3,8 +3,10 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="eu:faredge:faredgedm"
     elementFormDefault="qualified" attributeFormDefault="unqualified"
     xmlns:dm="eu:faredge:faredgedm" xmlns:dcd="eu:faredge:drpp:dcd" xmlns:dsm="eu:faredge:drpp:dsm"
-    xmlns:dcm="eu:faredge:drpp:dcm" xmlns:eapmd="eu:faredge:ea:processormd"
-    xmlns:dsd="eu:faredge:drpp:dsd" xmlns:dt="eu:faredge:drpp:dk" xmlns:di="eu:faredge:drpp:di">
+    xmlns:dcm="eu:faredge:drpp:dcm" xmlns:apd="eu:faredge:ea:apd" xmlns:dsd="eu:faredge:drpp:dsd"
+    xmlns:dt="eu:faredge:drpp:dk" xmlns:di="eu:faredge:drpp:di"
+    xmlns:am="eu:faredge:ea:orchestrator" xmlns:apm="eu:faredge:ea:processor">
+
 
     <xs:import namespace="eu:faredge:drpp:dk" schemaLocation="DataKind.xsd"/>
     <xs:import namespace="eu:faredge:drpp:di" schemaLocation="DataInterface.xsd"/>
@@ -12,7 +14,9 @@
     <xs:import namespace="eu:faredge:drpp:dcd" schemaLocation="DataChannelDescriptor.xsd"/>
     <xs:import namespace="eu:faredge:drpp:dcm" schemaLocation="DataConsumerManifest.xsd"/>
     <xs:import namespace="eu:faredge:drpp:dsm" schemaLocation="DataSourceManifest.xsd"/>
-    <xs:import namespace="eu:faredge:ea:processormd" schemaLocation="EaProcessorMD.xsd"/>
+    <xs:import namespace="eu:faredge:ea:apd" schemaLocation="AnalyticsProcessorDefinition.xsd"/>
+    <xs:import namespace="eu:faredge:ea:orchestrator" schemaLocation="AnalyticsManifest.xsd"/>
+    <xs:import namespace="eu:faredge:ea:processor" schemaLocation="AnalyticsProcessorManifest.xsd"/>
 
     <xs:element name="FarEdgeDM">
         <xs:annotation>
@@ -27,7 +31,30 @@
                     </xs:annotation>
                 </xs:element>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="dm:additionalInformation"/>
+                <xs:element name="DataDefinitions">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="dsd:DSD"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="di:DI"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="dt:DK"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="apd:APD"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="DataOperations">
+                    <xs:annotation>
+                        <xs:documentation>Edge Gateway Data Operations</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="dcd:DCD"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="apm:APM"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="am:AM"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element ref="dm:EdgeGateway" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element ref="dm:SourceLiveData" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
             <xs:attribute name="name" type="xs:string"/>
@@ -60,29 +87,29 @@
                     </xs:annotation>
                 </xs:element>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="dm:additionalInformation"/>
-                <xs:element name="MetaData">
+                <xs:element name="DataManifests">
                     <xs:annotation>
-                        <xs:documentation>The Meta-Data of FAR-EDGE</xs:documentation>
+                        <xs:documentation>Edge Gateway Data Manifests</xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element ref="dm:Device"/>
-                            <xs:element ref="dm:DataDefinitions"/>
-                            <xs:element ref="dm:Connections"/>
-                            <xs:element ref="dm:ProcessingDevices"/>
+                            <xs:element maxOccurs="unbounded" ref="dsm:DSM" minOccurs="0"/>
+                            <xs:element maxOccurs="unbounded" ref="dcm:DCM" minOccurs="0"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="LiveData">
+                <xs:element name="DataOperations">
                     <xs:annotation>
-                        <xs:documentation>The Live Data of FAR-EDGE</xs:documentation>
+                        <xs:documentation>Edge Gateway Data Operations</xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element ref="dm:DeviceLD" maxOccurs="unbounded" minOccurs="0"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="apm:APM"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="am:AM"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+                <xs:element ref="dm:SourceLiveData" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
             <xs:attribute name="name" type="xs:string"/>
@@ -91,56 +118,29 @@
                     <xs:documentation>For scope hierarchy.</xs:documentation>
                 </xs:annotation>
             </xs:attribute>
+            <xs:attribute name="macAddress" type="xs:string"/>
         </xs:complexType>
     </xs:element>
-    <xs:element name="Connections">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="dcd:DCD"/>
-            </xs:sequence>
-            <xs:attribute name="id" type="xs:anyURI"/>
-            <xs:attribute name="namespace" type="xs:string">
-                <xs:annotation>
-                    <xs:documentation>For scope hierarchy.</xs:documentation>
-                </xs:annotation>
-            </xs:attribute>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="DataDefinitions">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="dsd:DSD"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="di:DI"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="dt:DK"/>
-            </xs:sequence>
-            <xs:attribute name="id" type="xs:anyURI"/>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="DeviceLD">
+
+
+    <xs:element name="SourceLiveData">
         <xs:annotation>
-            <xs:documentation>Device Live Data</xs:documentation>
+            <xs:documentation>A generic type of Live Data Source (physical or virtual)</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
                 <xs:element minOccurs="0" name="timestamp" type="xs:dateTime"/>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="dm:observation"/>
             </xs:sequence>
-            <xs:attribute name="id" type="xs:anyURI">
+            <xs:attribute name="DataSourceManifestReferenceID" type="xs:anyURI">
                 <xs:annotation>
-                    <xs:documentation>The ID of the device (physical or virtual) these 
-                                    observations point to.</xs:documentation>
-                </xs:annotation>
-            </xs:attribute>
-            <xs:attribute name="name" type="xs:string">
-                <xs:annotation>
-                    <xs:documentation>The Name of the Edge Node these measurements
-                                    point to.</xs:documentation>
+                    <xs:documentation>The ID of the Data Source Manifest (physical or virtual) these 
+                                    observations refaire to.</xs:documentation>
                 </xs:annotation>
             </xs:attribute>
             <xs:attribute default="false" name="mobile" type="xs:boolean">
                 <xs:annotation>
-                    <xs:documentation>Identifies if the Edge node is mobile or
-                                    not</xs:documentation>
+                    <xs:documentation>Identifies if the Edge node is mobile or not. If it is mobile the location field within the observation entity should be provided as well.</xs:documentation>
                 </xs:annotation>
             </xs:attribute>
         </xs:complexType>
@@ -150,16 +150,8 @@
             <xs:documentation>Logical Device MetaData</xs:documentation>
         </xs:annotation>
         <xs:complexType>
-            <xs:sequence>
-                <xs:element maxOccurs="unbounded" ref="dsm:DSM" minOccurs="0"/>
-                <xs:element maxOccurs="unbounded" ref="dcm:DCM" minOccurs="0"/>
-            </xs:sequence>
+            <xs:sequence> </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
-            <xs:attribute name="namespace" type="xs:string">
-                <xs:annotation>
-                    <xs:documentation>For scope hierarchy.</xs:documentation>
-                </xs:annotation>
-            </xs:attribute>
         </xs:complexType>
     </xs:element>
 
@@ -168,14 +160,7 @@
             <xs:documentation>Edge Gateway Processing Device (Edge Analytics) capabilities (metadata)</xs:documentation>
         </xs:annotation>
         <xs:complexType>
-            <xs:sequence>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="eapmd:EaProcessorMD"/>
-            </xs:sequence>
-            <xs:attribute name="namespace" type="xs:string">
-                <xs:annotation>
-                    <xs:documentation>For scope hierarchy.</xs:documentation>
-                </xs:annotation>
-            </xs:attribute>
+            <xs:sequence> </xs:sequence>
         </xs:complexType>
     </xs:element>
 
@@ -185,7 +170,7 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element form="qualified" name="timestamp" type="xs:dateTime">
+                <xs:element form="qualified" name="timestamp" type="xs:dateTime" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation>The timestamp indicating the instant in which 
                                         a measurement was acquired</xs:documentation>
@@ -197,29 +182,17 @@
                                         taken if Edge Node's mobile attribute is true</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element maxOccurs="1" name="defaultValue" type="xs:anyType" minOccurs="0">
-                    <xs:annotation>
-                        <xs:documentation>A predefined default value for the
-                                        measurement</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
                 <xs:element name="value" type="xs:anyType" minOccurs="1">
                     <xs:annotation>
-                        <xs:documentation>Element describing the value of a
-                                        measurement.</xs:documentation>
+                        <xs:documentation>Element providing the value of a measurement.</xs:documentation>
                     </xs:annotation>
                 </xs:element>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
             <xs:attribute name="name" type="xs:string"/>
-            <xs:attribute name="quantityKind" type="xs:string">
+            <xs:attribute name="DataKindReferenceID" type="xs:anyURI">
                 <xs:annotation>
-                    <xs:documentation>A QuantityKind is an abstract classifier that represents the concept of "kind of quantity". A QuantityKind represents the essence of a quantity without any numerical value or unit. (e.g. A sensor -sensor1- measures temperature: sensor1 has quantityKind temperature) </xs:documentation>
-                </xs:annotation>
-            </xs:attribute>
-            <xs:attribute name="dataType" type="xs:string">
-                <xs:annotation>
-                    <xs:documentation>A classification of data (i.e. short, int, float, boolean, ...)</xs:documentation>
+                    <xs:documentation>The ID of the Data Kind this observation refaire to.</xs:documentation>
                 </xs:annotation>
             </xs:attribute>
         </xs:complexType>

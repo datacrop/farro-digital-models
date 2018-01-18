@@ -10,7 +10,7 @@
             <xs:sequence>
                 <xs:element type="xs:string" name="dataKindDescription" minOccurs="0">
                     <xs:annotation>
-                        <xs:documentation>Provides an Optional descreption of the Data Kind</xs:documentation>
+                        <xs:documentation>Provides an Optional description of the Data Kind</xs:documentation>
                     </xs:annotation>
                 </xs:element>
                 <xs:element type="xs:string" name="modelType" minOccurs="0">

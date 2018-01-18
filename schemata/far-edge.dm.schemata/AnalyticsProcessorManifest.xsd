@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Author: Nikos Kefalakis (nkef@ait.edu.gr) -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="eu:faredge:ea:processor" xmlns:apm="eu:faredge:ea:processor"
+    xmlns:apd="eu:faredge:ea:apd">
+
+
+    <xs:import namespace="eu:faredge:ea:apd" schemaLocation="AnalyticsProcessorDefinition.xsd"/>
+
+
+    <xs:element name="APM">
+        <xs:annotation>
+            <xs:documentation>FAR-Edge Analytics Processor Manifest</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="AnalyticsProcessorDefinitionReferenceID" type="xs:anyURI"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="apm:ConfigurationParameters"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="ConfigurationParameters">
+        <xs:annotation>
+            <xs:documentation>Edge Analytics Processor Configuration parameters per Data Source</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="1" maxOccurs="unbounded" name="DataSource">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" ref="apm:Parameter"/>
+                        </xs:sequence>
+                        <xs:attribute name="DataSourceManifestReferenceID" type="xs:anyURI"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Parameter">
+        <xs:annotation>
+            <xs:documentation>Analytics Processor parameter</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="key" type="xs:string"/>
+                <xs:element name="value" type="xs:string"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+
+
+
+</xs:schema>

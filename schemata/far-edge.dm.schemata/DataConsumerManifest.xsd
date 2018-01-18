@@ -9,7 +9,7 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="dataSourceDefinitionsIDs">
+                <xs:element name="dataSourceDefinitionReferenceID">
                     <xs:annotation>
                         <xs:documentation>Provides a list of pointers to Data Source Definitions that are compatible and of interest.</xs:documentation>
                     </xs:annotation>
@@ -23,6 +23,7 @@
                     <xs:documentation>Uniquely identifies the Data Consumer Manifest as a URI</xs:documentation>
                 </xs:annotation>
             </xs:attribute>
+            <xs:attribute name="macAddress" type="xs:string"/>
         </xs:complexType>
     </xs:element>
 

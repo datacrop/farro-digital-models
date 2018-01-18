@@ -3,12 +3,12 @@
 <!-- Author: Nikos Kefalakis (nkef@ait.edu.gr) -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    targetNamespace="eu:faredge:ea:processormd" xmlns:eapmd="eu:faredge:ea:processormd">
+    targetNamespace="eu:faredge:ea:apd" xmlns:apd="eu:faredge:ea:apd">
 
 
-    <xs:element name="EaProcessorMD">
+    <xs:element name="APD">
         <xs:annotation>
-            <xs:documentation>FAR-Edge Edge Analytics Procesor Meta-Data</xs:documentation>
+            <xs:documentation>FAR-Edge Analytics Procesor Definition</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
@@ -37,8 +37,8 @@
                         <xs:documentation>The physical or relative location of the processor library</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="eapmd:additionalInformation"/>
-                <xs:element minOccurs="0" maxOccurs="1" ref="eapmd:ProcessorConfigs"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="apd:additionalInformation"/>
+                <xs:element minOccurs="0" maxOccurs="1" ref="apd:Parameters"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI" use="optional">
                 <xs:annotation>
@@ -54,32 +54,35 @@
     </xs:element>
 
 
-    <xs:element name="ProcessorConfigs">
+    <xs:element name="Parameters">
         <xs:annotation>
-            <xs:documentation>Edge Analytics Processor Configurations</xs:documentation>
+            <xs:documentation>Analytics Processor list of required parameters</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="attribute" maxOccurs="unbounded" minOccurs="0">
+                <xs:element name="Parameter" maxOccurs="unbounded" minOccurs="0">
                     <xs:annotation>
-                        <xs:documentation>EA Processor List of Attributes</xs:documentation>
+                        <xs:documentation>Analytics Processor parameter</xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="DefaultValue" type="xs:anyType" minOccurs="0">
-                                <xs:annotation>
-                                    <xs:documentation>A predefined default value for an attribute.</xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="Value" type="xs:anyType" minOccurs="1">
+                            <xs:element name="description" type="xs:anyType" minOccurs="1">
                                 <xs:annotation>
                                     <xs:documentation>Element describing the value of an attribute.</xs:documentation>
                                 </xs:annotation>
                             </xs:element>
+                            <xs:element minOccurs="1" name="dataType" type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>A classification of data (i.e. short, int, float, boolean, ...)</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element name="defaultValue" type="xs:anyType" minOccurs="0">
+                                <xs:annotation>
+                                    <xs:documentation>A predefined default value for an attribute.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
                         </xs:sequence>
                         <xs:attribute name="name" type="xs:string"/>
-                        <xs:attribute name="unit" type="xs:string"/>
-                        <xs:attribute name="dataType" type="xs:string"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Author: Nikos Kefalakis (nkef@ait.edu.gr) -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="eu:faredge:ea:orchestrator"
+    elementFormDefault="qualified" xmlns:am="eu:faredge:ea:orchestrator"
+    xmlns:apm="eu:faredge:ea:processor">
+
+    <xs:import namespace="eu:faredge:ea:processor" schemaLocation="AnalyticsProcessorManifest.xsd"/>
+
+    <xs:element name="AM">
+        <xs:annotation>
+            <xs:documentation>FAR-Edge Edge Analytics Orchestrator Manifest</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="apm:APM"/>
+            </xs:sequence>
+            <xs:attribute name="id" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

@@ -3,17 +3,22 @@
     targetNamespace="eu:faredge:drpp:dsd" xmlns:dsd="eu:faredge:drpp:dsd"
     xmlns:dt="eu:faredge:drpp:dk" xmlns:di="eu:faredge:drpp:di">
 
-    <xs:import namespace="eu:faredge:drpp:dk" schemaLocation="DataKind.xsd"/>
-    <xs:import namespace="eu:faredge:drpp:di" schemaLocation="DataInterface.xsd"/>
-
     <xs:element name="DSD">
         <xs:annotation>
             <xs:documentation>FAR-Edge Data Source Definition</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="di:DI"/>
-                <xs:element ref="dt:DK"/>
+                <xs:element name="DataInterfaceReferenceID" type="xs:anyURI">
+                    <xs:annotation>
+                        <xs:documentation>Points to an existing FAR-EDGE Data Interface definition</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="DataKindReferenceID" type="xs:anyURI" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>Points to an existing FAR-EDGE Data Kind definition</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI">
                 <xs:annotation>

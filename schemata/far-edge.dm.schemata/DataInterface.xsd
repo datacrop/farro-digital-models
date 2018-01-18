@@ -8,27 +8,39 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="dataInterfaceSpecification">
+                <xs:element type="xs:string" name="communicationProtocol" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>Specifies the protocol Type (i.e. MQTT, JMS, OPCUA, HTTP ...)</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Parameters">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element type="xs:string" name="communicationProtocol" minOccurs="0">
+                            <xs:element name="Parameter" maxOccurs="unbounded" minOccurs="0">
                                 <xs:annotation>
-                                    <xs:documentation>Specifies the protocol Type (i.e. MQTT, JMS, OPCUA, HTTP ...)</xs:documentation>
+                                    <xs:documentation>Analytics Processor parameter</xs:documentation>
                                 </xs:annotation>
-                            </xs:element>
-                            <xs:element name="Parameters">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="parameter">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                  <xs:element name="description" type="xs:string"/>
-                                                  <xs:element name="name" type="xs:string"/>
-                                                  <xs:element name="defaultValue" type="xs:string"/>
-                                                </xs:sequence>
-                                            </xs:complexType>
+                                        <xs:element name="description" type="xs:anyType"
+                                            minOccurs="1">
+                                            <xs:annotation>
+                                                <xs:documentation>Element describing the value of an attribute.</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element minOccurs="1" name="dataType" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>A classification of data (i.e. short, int, float, boolean, ...)</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="defaultValue" type="xs:anyType"
+                                            minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>A predefined default value for an attribute.</xs:documentation>
+                                            </xs:annotation>
                                         </xs:element>
                                     </xs:sequence>
+                                    <xs:attribute name="name" type="xs:string"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
