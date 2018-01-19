@@ -8,7 +8,7 @@
 
     <xs:element name="APD">
         <xs:annotation>
-            <xs:documentation>FAR-Edge Analytics Procesor Definition</xs:documentation>
+            <xs:documentation>FAR-Edge Analytics Processor Definition</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>

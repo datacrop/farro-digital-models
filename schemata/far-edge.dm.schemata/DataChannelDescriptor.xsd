@@ -8,14 +8,14 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element type="xs:dateTime" name="expirationDateTime"/>
-                <xs:element type="xs:dateTime" name="validFrom"/>
-                <xs:element name="dataSourceManifestID" type="xs:anyURI">
+                <xs:element type="xs:dateTime" name="expirationDateTime" minOccurs="0"/>
+                <xs:element type="xs:dateTime" name="validFrom" minOccurs="0"/>
+                <xs:element name="DataSourceManifestReferenceID" type="xs:anyURI">
                     <xs:annotation>
                         <xs:documentation>The ID of the Data Source Manifest the Data Channel Descriptor points to.</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="dataConsumerManifestID" nillable="false" type="xs:anyURI">
+                <xs:element name="DataConsumerManifestReferenceID" nillable="false" type="xs:anyURI">
                     <xs:annotation>
                         <xs:documentation>The ID of the Data Consummer Manifest the Data Channel Descriptor points to.</xs:documentation>
                     </xs:annotation>
