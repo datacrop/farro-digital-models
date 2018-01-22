@@ -6,7 +6,7 @@
 //
 
 
-package eu.faredge.dm.dcd;
+package eu.faredge.dm.analytics.ap;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the eu.faredge.dm.dcd package. 
+ * generated in the eu.faredge.dm.analytics.ap package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,18 +30,42 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: eu.faredge.dm.dcd
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: eu.faredge.dm.analytics.ap
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link DCD }
+     * Create an instance of {@link ConfigurationParameters }
      * 
      */
-    public DCD createDCD() {
-        return new DCD();
+    public ConfigurationParameters createConfigurationParameters() {
+        return new ConfigurationParameters();
+    }
+
+    /**
+     * Create an instance of {@link ConfigurationParameters.DataSource }
+     * 
+     */
+    public ConfigurationParameters.DataSource createConfigurationParametersDataSource() {
+        return new ConfigurationParameters.DataSource();
+    }
+
+    /**
+     * Create an instance of {@link Parameter }
+     * 
+     */
+    public Parameter createParameter() {
+        return new Parameter();
+    }
+
+    /**
+     * Create an instance of {@link APM }
+     * 
+     */
+    public APM createAPM() {
+        return new APM();
     }
 
 }

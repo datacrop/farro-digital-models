@@ -5,5 +5,5 @@
 // Generated on: 2018.01.22 at 04:28:44 рм EET 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "eu:faredge:faredgedm", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package eu.faredge.dm.core;
+@javax.xml.bind.annotation.XmlSchema(namespace = "eu:faredge:ea:apd", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package eu.faredge.dm.analytics.apd;

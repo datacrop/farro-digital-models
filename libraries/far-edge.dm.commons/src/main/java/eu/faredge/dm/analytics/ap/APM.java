@@ -6,10 +6,8 @@
 //
 
 
-package eu.faredge.dm.dsd;
+package eu.faredge.dm.analytics.ap;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -29,8 +27,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="DataInterfaceReferenceID" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
- *         &lt;element name="DataKindReferenceID" type="{http://www.w3.org/2001/XMLSchema}anyURI" maxOccurs="unbounded"/>
+ *         &lt;element name="AnalyticsProcessorDefinitionReferenceID" type="{http://www.w3.org/2001/XMLSchema}anyURI"/>
+ *         &lt;element ref="{eu:faredge:ea:processor}ConfigurationParameters" minOccurs="0"/>
  *       &lt;/sequence>
  *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
  *     &lt;/restriction>
@@ -42,73 +40,67 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "dataInterfaceReferenceID",
-    "dataKindReferenceID"
+    "analyticsProcessorDefinitionReferenceID",
+    "configurationParameters"
 })
-@XmlRootElement(name = "DSD")
-public class DSD {
+@XmlRootElement(name = "APM")
+public class APM {
 
-    @XmlElement(name = "DataInterfaceReferenceID", required = true)
+    @XmlElement(name = "AnalyticsProcessorDefinitionReferenceID", required = true)
     @XmlSchemaType(name = "anyURI")
-    protected String dataInterfaceReferenceID;
-    @XmlElement(name = "DataKindReferenceID", required = true)
-    @XmlSchemaType(name = "anyURI")
-    protected List<String> dataKindReferenceID;
+    protected String analyticsProcessorDefinitionReferenceID;
+    @XmlElement(name = "ConfigurationParameters")
+    protected ConfigurationParameters configurationParameters;
     @XmlAttribute(name = "id")
     @XmlSchemaType(name = "anyURI")
     protected String id;
 
     /**
-     * Gets the value of the dataInterfaceReferenceID property.
+     * Gets the value of the analyticsProcessorDefinitionReferenceID property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getDataInterfaceReferenceID() {
-        return dataInterfaceReferenceID;
+    public String getAnalyticsProcessorDefinitionReferenceID() {
+        return analyticsProcessorDefinitionReferenceID;
     }
 
     /**
-     * Sets the value of the dataInterfaceReferenceID property.
+     * Sets the value of the analyticsProcessorDefinitionReferenceID property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setDataInterfaceReferenceID(String value) {
-        this.dataInterfaceReferenceID = value;
+    public void setAnalyticsProcessorDefinitionReferenceID(String value) {
+        this.analyticsProcessorDefinitionReferenceID = value;
     }
 
     /**
-     * Gets the value of the dataKindReferenceID property.
+     * Gets the value of the configurationParameters property.
      * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the dataKindReferenceID property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getDataKindReferenceID().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link String }
-     * 
-     * 
+     * @return
+     *     possible object is
+     *     {@link ConfigurationParameters }
+     *     
      */
-    public List<String> getDataKindReferenceID() {
-        if (dataKindReferenceID == null) {
-            dataKindReferenceID = new ArrayList<String>();
-        }
-        return this.dataKindReferenceID;
+    public ConfigurationParameters getConfigurationParameters() {
+        return configurationParameters;
+    }
+
+    /**
+     * Sets the value of the configurationParameters property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link ConfigurationParameters }
+     *     
+     */
+    public void setConfigurationParameters(ConfigurationParameters value) {
+        this.configurationParameters = value;
     }
 
     /**
