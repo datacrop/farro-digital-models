@@ -17,20 +17,36 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element ref="apm:DataSink"/>
-                <xs:element maxOccurs="unbounded" ref="apm:DataSource"/>
+                <xs:element ref="apm:DataSources"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
-            <xs:attribute name="AnalyticsProcessorDefinitionReferenceID" type="xs:anyURI"/>
+            <xs:attribute name="AnalyticsProcessorDefinitionReferenceID" type="xs:anyURI">
+                <xs:annotation>
+                    <xs:documentation>The Reference ID of the Analytics Processor Definition(APD) this APM is using </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
         </xs:complexType>
     </xs:element>
-
-
     <xs:element name="DataSink">
         <xs:annotation>
             <xs:documentation>Data Sink provides the description of the data produced from the processor with the help of a Data Source Manifest which it references.</xs:documentation>
         </xs:annotation>
         <xs:complexType>
-            <xs:attribute name="DataSourceManifestReferenceID" type="xs:anyURI"/>
+            <xs:attribute name="DataSourceManifestReferenceID" type="xs:anyURI">
+                <xs:annotation>
+                    <xs:documentation>The Reference ID of the Data Source Manifest which describes the output of this APM</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DataSources">
+        <xs:annotation>
+            <xs:documentation>Edge Analytics Processor Data Sources</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="apm:DataSource"/>
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
     <xs:element name="DataSource">
@@ -39,12 +55,22 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element maxOccurs="unbounded" ref="apm:Parameter"/>
+                <xs:element ref="apm:Parameters"/>
             </xs:sequence>
-            <xs:attribute name="DataSourceManifestReferenceID" type="xs:anyURI"/>
+            <xs:attribute name="DataSourceManifestReferenceID" type="xs:anyURI">
+                <xs:annotation>
+                    <xs:documentation>The Reference ID of the Data Source Manifest which identifyes a data source of the APM</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
         </xs:complexType>
     </xs:element>
-
+    <xs:element name="Parameters">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="apm:Parameter"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     <xs:element name="Parameter">
         <xs:annotation>
             <xs:documentation>Analytics Processor Manifest parameter</xs:documentation>

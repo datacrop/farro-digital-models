@@ -6,18 +6,15 @@
 //
 
 
-package eu.faredge.dm.analytics.am;
+package eu.faredge.dm.dsm;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import eu.faredge.dm.analytics.ap.APM;
 
 
 /**
@@ -30,9 +27,8 @@ import eu.faredge.dm.analytics.ap.APM;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{eu:faredge:ea:processor}APM" maxOccurs="unbounded"/>
+ *         &lt;element ref="{eu:faredge:drpp:dsm}Parameter" maxOccurs="unbounded"/>
  *       &lt;/sequence>
- *       &lt;attribute name="id" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -42,68 +38,41 @@ import eu.faredge.dm.analytics.ap.APM;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "apm"
+    "parameter"
 })
-@XmlRootElement(name = "AM")
-public class AM {
+@XmlRootElement(name = "DataSourceDefinitionInterfaceParameters")
+public class DataSourceDefinitionInterfaceParameters {
 
-    @XmlElement(name = "APM", namespace = "eu:faredge:ea:processor", required = true)
-    protected List<APM> apm;
-    @XmlAttribute(name = "id")
-    @XmlSchemaType(name = "anyURI")
-    protected String id;
+    @XmlElement(name = "Parameter", required = true)
+    protected List<Parameter> parameter;
 
     /**
-     * Gets the value of the apm property.
+     * Gets the value of the parameter property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the apm property.
+     * This is why there is not a <CODE>set</CODE> method for the parameter property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getAPM().add(newItem);
+     *    getParameter().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link APM }
+     * {@link Parameter }
      * 
      * 
      */
-    public List<APM> getAPM() {
-        if (apm == null) {
-            apm = new ArrayList<APM>();
+    public List<Parameter> getParameter() {
+        if (parameter == null) {
+            parameter = new ArrayList<Parameter>();
         }
-        return this.apm;
-    }
-
-    /**
-     * Gets the value of the id property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getId() {
-        return id;
-    }
-
-    /**
-     * Sets the value of the id property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setId(String value) {
-        this.id = value;
+        return this.parameter;
     }
 
 }

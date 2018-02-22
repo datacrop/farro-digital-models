@@ -8,7 +8,7 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element type="xs:string" name="dataKindDescription" minOccurs="0">
+                <xs:element type="xs:string" name="description" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation>Provides an Optional description of the Data Kind</xs:documentation>
                     </xs:annotation>

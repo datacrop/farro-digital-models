@@ -37,7 +37,7 @@
                         <xs:documentation>The physical or relative location of the processor library</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="apd:additionalInformation"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="apd:AdditionalInformation"/>
                 <xs:element minOccurs="0" maxOccurs="1" ref="apd:Parameters"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI" use="optional">
@@ -60,38 +60,39 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Parameter" maxOccurs="unbounded" minOccurs="0">
-                    <xs:annotation>
-                        <xs:documentation>Analytics Processor parameter</xs:documentation>
-                    </xs:annotation>
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="description" type="xs:anyType" minOccurs="1">
-                                <xs:annotation>
-                                    <xs:documentation>Element describing the value of an attribute.</xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element minOccurs="1" name="dataType" type="xs:string">
-                                <xs:annotation>
-                                    <xs:documentation>A classification of data (i.e. short, int, float, boolean, ...)</xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="defaultValue" type="xs:anyType" minOccurs="0">
-                                <xs:annotation>
-                                    <xs:documentation>A predefined default value for an attribute.</xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                        </xs:sequence>
-                        <xs:attribute name="name" type="xs:string"/>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="apd:Parameter"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
 
 
-    <xs:element name="additionalInformation" type="xs:anyType">
+    <xs:element name="Parameter">
+        <xs:annotation>
+            <xs:documentation>Analytics Processor parameter</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="description" type="xs:anyType" minOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Element describing the value of an attribute.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element minOccurs="1" name="dataType" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>A classification of data (i.e. short, int, float, boolean, ...)</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="defaultValue" type="xs:anyType" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>A predefined default value for an attribute.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="AdditionalInformation" type="xs:anyType">
         <xs:annotation>
             <xs:documentation>Optional auxiliary field that may contain any additional information</xs:documentation>
         </xs:annotation>

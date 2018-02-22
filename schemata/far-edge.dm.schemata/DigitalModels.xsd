@@ -30,7 +30,7 @@
                             Model</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="dm:additionalInformation"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="dm:AdditionalInformation"/>
                 <xs:element name="DataDefinitions">
                     <xs:annotation>
                         <xs:documentation>Digital Models Data Definitions</xs:documentation>
@@ -89,7 +89,7 @@
                         <xs:documentation>The Edge Gateway location</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="dm:additionalInformation"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="dm:AdditionalInformation"/>
                 <xs:element name="DataManifests">
                     <xs:annotation>
                         <xs:documentation>Edge Gateway Data Manifests</xs:documentation>
@@ -227,7 +227,7 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="additionalInformation" type="xs:anyType">
+    <xs:element name="AdditionalInformation" type="xs:anyType">
         <xs:annotation>
             <xs:documentation>Optional auxiliary field that may contain any additional
                 information</xs:documentation>

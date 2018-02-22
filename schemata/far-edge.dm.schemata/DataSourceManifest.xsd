@@ -18,23 +18,7 @@
                         <xs:documentation>Points to an existing Data Source Definition.</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="DataSourceDefinitionInterfaceParameters">
-                    <xs:annotation>
-                        <xs:documentation>Data Source Definition Interface configuration parameters</xs:documentation>
-                    </xs:annotation>
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Parameter" maxOccurs="unbounded">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element type="xs:string" name="key"/>
-                                        <xs:element type="xs:string" name="value"/>
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element ref="dsm:DataSourceDefinitionInterfaceParameters"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI">
                 <xs:annotation>
@@ -42,6 +26,24 @@
                 </xs:annotation>
             </xs:attribute>
             <xs:attribute name="macAddress" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DataSourceDefinitionInterfaceParameters">
+        <xs:annotation>
+            <xs:documentation>Data Source Definition Interface configuration parameters</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" ref="dsm:Parameter"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Parameter">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="key"/>
+                <xs:element type="xs:string" name="value"/>
+            </xs:sequence>
         </xs:complexType>
     </xs:element>
 </xs:schema>
