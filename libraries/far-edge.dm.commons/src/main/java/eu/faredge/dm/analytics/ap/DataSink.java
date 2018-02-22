@@ -10,8 +10,9 @@ package eu.faredge.dm.analytics.ap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -24,10 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;all>
- *         &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *       &lt;/all>
+ *       &lt;attribute name="DataSourceManifestReferenceID" type="{http://www.w3.org/2001/XMLSchema}anyURI" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -36,63 +34,36 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "")
+@XmlRootElement(name = "DataSink")
+public class DataSink {
 
-})
-@XmlRootElement(name = "Parameter")
-public class Parameter {
-
-    @XmlElement(required = true)
-    protected String key;
-    @XmlElement(required = true)
-    protected String value;
+    @XmlAttribute(name = "DataSourceManifestReferenceID")
+    @XmlSchemaType(name = "anyURI")
+    protected String dataSourceManifestReferenceID;
 
     /**
-     * Gets the value of the key property.
+     * Gets the value of the dataSourceManifestReferenceID property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getKey() {
-        return key;
+    public String getDataSourceManifestReferenceID() {
+        return dataSourceManifestReferenceID;
     }
 
     /**
-     * Sets the value of the key property.
+     * Sets the value of the dataSourceManifestReferenceID property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setKey(String value) {
-        this.key = value;
-    }
-
-    /**
-     * Gets the value of the value property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getValue() {
-        return value;
-    }
-
-    /**
-     * Sets the value of the value property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setValue(String value) {
-        this.value = value;
+    public void setDataSourceManifestReferenceID(String value) {
+        this.dataSourceManifestReferenceID = value;
     }
 
 }

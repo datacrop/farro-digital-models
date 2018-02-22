@@ -33,7 +33,7 @@
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="dm:additionalInformation"/>
                 <xs:element name="DataDefinitions">
                     <xs:annotation>
-                        <xs:documentation>Edge Gateway Data Definitions</xs:documentation>
+                        <xs:documentation>Digital Models Data Definitions</xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
@@ -44,9 +44,9 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="DataOperations">
+                <xs:element name="DataManipulation">
                     <xs:annotation>
-                        <xs:documentation>Edge Gateway Data Operations</xs:documentation>
+                        <xs:documentation>Digital Models Data Manipulation</xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
@@ -57,7 +57,7 @@
                     </xs:complexType>
                 </xs:element>
                 <xs:element ref="dm:EdgeGateway" maxOccurs="unbounded" minOccurs="0"/>
-                <xs:element ref="dm:LiveDataSource" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element ref="dm:LiveDataSet" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
             <xs:attribute name="name" type="xs:string"/>
@@ -101,9 +101,9 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="DataOperations">
+                <xs:element name="DataManipulation">
                     <xs:annotation>
-                        <xs:documentation>Edge Gateway Data Operations</xs:documentation>
+                        <xs:documentation>Edge Gateway Data Manipulation</xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
@@ -112,7 +112,7 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element ref="dm:LiveDataSource" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element ref="dm:LiveDataSet" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
             <xs:attribute name="name" type="xs:string"/>
@@ -126,7 +126,7 @@
     </xs:element>
 
 
-    <xs:element name="LiveDataSource">
+    <xs:element name="LiveDataSet">
         <xs:annotation>
             <xs:documentation>A generic type of Data Source Live measurements (physical or virtual)</xs:documentation>
         </xs:annotation>

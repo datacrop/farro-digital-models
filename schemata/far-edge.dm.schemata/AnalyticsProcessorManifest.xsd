@@ -16,35 +16,38 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="AnalyticsProcessorDefinitionReferenceID" type="xs:anyURI"/>
-                <xs:element minOccurs="0" maxOccurs="1" ref="apm:ConfigurationParameters"/>
+                <xs:element ref="apm:DataSink"/>
+                <xs:element maxOccurs="unbounded" ref="apm:DataSource"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
+            <xs:attribute name="AnalyticsProcessorDefinitionReferenceID" type="xs:anyURI"/>
         </xs:complexType>
     </xs:element>
 
 
-    <xs:element name="ConfigurationParameters">
+    <xs:element name="DataSink">
         <xs:annotation>
-            <xs:documentation>Edge Analytics Processor Configuration parameters per Data Source</xs:documentation>
+            <xs:documentation>Data Sink provides the description of the data produced from the processor with the help of a Data Source Manifest which it references.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="DataSourceManifestReferenceID" type="xs:anyURI"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DataSource">
+        <xs:annotation>
+            <xs:documentation>Edge Analytics Processor Data Source and Configuration parameters.</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element minOccurs="1" maxOccurs="unbounded" name="DataSource">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element maxOccurs="unbounded" ref="apm:Parameter"/>
-                        </xs:sequence>
-                        <xs:attribute name="DataSourceManifestReferenceID" type="xs:anyURI"/>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element maxOccurs="unbounded" ref="apm:Parameter"/>
             </xs:sequence>
+            <xs:attribute name="DataSourceManifestReferenceID" type="xs:anyURI"/>
         </xs:complexType>
     </xs:element>
 
     <xs:element name="Parameter">
         <xs:annotation>
-            <xs:documentation>Analytics Processor parameter</xs:documentation>
+            <xs:documentation>Analytics Processor Manifest parameter</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:all>
