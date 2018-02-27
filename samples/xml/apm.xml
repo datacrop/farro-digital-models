@@ -1,0 +1,23 @@
+<apm:APM id="apm://806d2f4a-73e8-4c9b-b4d4-c362b210dd20">
+  <apm:AnalyticsProcessorDefinitionReferenceID>
+    apd://ee53406f-a113-4278-a910-c8f87703c7e0
+  </apm:AnalyticsProcessorDefinitionReferenceID>
+  <apm:AnalyticsProcessorDefinitionParameters>
+    <apm:Parameter>
+      <apm:key>bJVnAeVlAsJrcZpWkeGB</apm:key>
+      <apm:value>dtWwXlWQcdyIGSonXffcuF</apm:value>
+    </apm:Parameter>
+  </apm:AnalyticsProcessorDefinitionParameters>
+  <apm:DataSink>
+    <apm:DataSourceManifestReferenceID>
+      dsm://58114eda-2885-4805-b0fa-fba9fb607ce0
+    </apm:DataSourceManifestReferenceID>
+  </apm:DataSink>
+  <apm:DataSources>
+    <apm:DataSource>
+      <apm:DataSourceManifestReferenceID>
+        dsm://58114eda-2885-4805-b0fa-fba9fb607ce0
+      </apm:DataSourceManifestReferenceID>
+    </apm:DataSource>
+  </apm:DataSources>
+</apm:APM>

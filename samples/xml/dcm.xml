@@ -1,0 +1,8 @@
+<dcm:DCM id="dcm://2227394c-8f31-4f16-a8af-edbecc38aae2"
+  macAddress="xLZAUfftSGfevZBJqKKw" xmlns:dcm="eu:faredge:drpp:dcm">
+  <dcm:DataSourceDefinitionReferenceIDs>
+    <dcm:DataSourceDefinitionReferenceID>
+      dsd://5109c09c-f36d-4f75-81e3-f69a5171944b
+    </dcm:DataSourceDefinitionReferenceID>
+  </dcm:DataSourceDefinitionReferenceIDs>
+</dcm:DCM>

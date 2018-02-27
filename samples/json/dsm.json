@@ -1,0 +1,11 @@
+"dsm": {
+  "id": "dsm://58114eda-2885-4805-b0fa-fba9fb607ce0",
+  "macAddress": "jRunBYlFJdfgWjOHdgNv",
+  "dataSourceDefinitionReferenceID": "dsd://5109c09c-f36d-4f75-81e3-f69a5171944b",
+  "dataSourceDefinitionInterfaceParameters": [
+    {
+      "key": "bJVnAeVlAsJrcZpWkeGB",
+      "value": "dtWwXlWQcdyIGSonXffcuF"
+    }
+  ]
+}
