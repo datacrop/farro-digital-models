@@ -23,6 +23,7 @@
                 </xs:element>
                 <xs:element ref="apm:DataSink"/>
                 <xs:element ref="apm:DataSources"/>
+                <xs:element ref="apm:Parameters"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
         </xs:complexType>
@@ -62,7 +63,6 @@
                         <xs:documentation>The Reference ID of the Data Source Manifest which identifyes a data source of the APM.</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element ref="apm:Parameters"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
