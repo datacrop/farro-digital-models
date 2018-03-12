@@ -9,13 +9,20 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="DataSourceDefinitionReferenceID">
+                <xs:element name="DataSourceDefinitionReferenceIDs">
                     <xs:annotation>
                         <xs:documentation>Provides a list of pointers to Data Source Definitions that are compatible and of interest.</xs:documentation>
                     </xs:annotation>
-                    <xs:simpleType>
-                        <xs:list itemType="xs:anyURI"/>
-                    </xs:simpleType>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="DataSourceDefinitionReferenceID" type="xs:anyURI"
+                                maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation>Points to an existing FAR-EDGE Data Source Definition definition.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
                 </xs:element>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI">

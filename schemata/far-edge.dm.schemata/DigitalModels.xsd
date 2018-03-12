@@ -31,6 +31,48 @@
                     </xs:annotation>
                 </xs:element>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="dm:AdditionalInformation"/>
+                <xs:element name="FDEM">
+                    <xs:annotation>
+                        <xs:documentation>Functional Domains and crosscutting functions Entity Mapping (FDEM).
+Entity mapping between (Automation, Analytics, Simulation) and (Field Abstraction and Data Routing).</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="SDRMs">
+                                <xs:annotation>
+                                    <xs:documentation>Simulation and Data Routing Mappings</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" minOccurs="0" name="SDRM">
+                                            <xs:annotation>
+                                                <xs:documentation>Simulation and Data Routing Mapping.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="DataSourceManifestReferenceID"
+                                                  type="xs:anyURI">
+                                                  <xs:annotation>
+                                                  <xs:documentation>The Reference ID of an existing Data Source Manifest of the Data Routing function. </xs:documentation>
+                                                  </xs:annotation>
+                                                  </xs:element>
+                                                  <xs:element
+                                                  name="SimulationLogicalEntityAttributeReferenceID"
+                                                  type="xs:anyURI">
+                                                  <xs:annotation>
+                                                  <xs:documentation>The Reference ID of an existing Logical Entity Attribute of Simulation Domain. </xs:documentation>
+                                                  </xs:annotation>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="id" type="xs:anyURI"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="DataDefinitions">
                     <xs:annotation>
                         <xs:documentation>Digital Models Data Definitions</xs:documentation>
