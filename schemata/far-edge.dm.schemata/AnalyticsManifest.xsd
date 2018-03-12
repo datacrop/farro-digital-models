@@ -2,11 +2,11 @@
 
 <!-- Author: Nikos Kefalakis (nkef@ait.edu.gr) -->
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="eu:faredge:ea:orchestrator"
-    elementFormDefault="qualified" xmlns:am="eu:faredge:ea:orchestrator"
-    xmlns:apm="eu:faredge:ea:processor">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="eu:faredge:analytics:orchestrator"
+    elementFormDefault="qualified" xmlns:am="eu:faredge:analytics:orchestrator"
+    xmlns:apm="eu:faredge:analytics:apm">
 
-    <xs:import namespace="eu:faredge:ea:processor" schemaLocation="AnalyticsProcessorManifest.xsd"/>
+    <xs:import namespace="eu:faredge:analytics:apm" schemaLocation="AnalyticsProcessorManifest.xsd"/>
 
     <xs:element name="AM">
         <xs:annotation>

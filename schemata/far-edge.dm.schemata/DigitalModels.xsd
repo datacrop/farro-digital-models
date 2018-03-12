@@ -3,9 +3,9 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="eu:faredge:faredgedm"
     elementFormDefault="qualified" attributeFormDefault="unqualified"
     xmlns:dm="eu:faredge:faredgedm" xmlns:dcd="eu:faredge:drpp:dcd" xmlns:dsm="eu:faredge:drpp:dsm"
-    xmlns:dcm="eu:faredge:drpp:dcm" xmlns:apd="eu:faredge:ea:apd" xmlns:dsd="eu:faredge:drpp:dsd"
+    xmlns:dcm="eu:faredge:drpp:dcm" xmlns:apd="eu:faredge:analytics:apd" xmlns:dsd="eu:faredge:drpp:dsd"
     xmlns:dt="eu:faredge:drpp:dk" xmlns:di="eu:faredge:drpp:di"
-    xmlns:am="eu:faredge:ea:orchestrator" xmlns:apm="eu:faredge:ea:processor">
+    xmlns:am="eu:faredge:analytics:orchestrator" xmlns:apm="eu:faredge:analytics:apm">
 
 
     <xs:import namespace="eu:faredge:drpp:dk" schemaLocation="DataKind.xsd"/>
@@ -14,9 +14,9 @@
     <xs:import namespace="eu:faredge:drpp:dcd" schemaLocation="DataChannelDescriptor.xsd"/>
     <xs:import namespace="eu:faredge:drpp:dcm" schemaLocation="DataConsumerManifest.xsd"/>
     <xs:import namespace="eu:faredge:drpp:dsm" schemaLocation="DataSourceManifest.xsd"/>
-    <xs:import namespace="eu:faredge:ea:apd" schemaLocation="AnalyticsProcessorDefinition.xsd"/>
-    <xs:import namespace="eu:faredge:ea:orchestrator" schemaLocation="AnalyticsManifest.xsd"/>
-    <xs:import namespace="eu:faredge:ea:processor" schemaLocation="AnalyticsProcessorManifest.xsd"/>
+    <xs:import namespace="eu:faredge:analytics:apd" schemaLocation="AnalyticsProcessorDefinition.xsd"/>
+    <xs:import namespace="eu:faredge:analytics:orchestrator" schemaLocation="AnalyticsManifest.xsd"/>
+    <xs:import namespace="eu:faredge:analytics:apm" schemaLocation="AnalyticsProcessorManifest.xsd"/>
 
     <xs:element name="FarEdgeDM">
         <xs:annotation>

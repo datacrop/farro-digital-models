@@ -3,7 +3,7 @@
 <!-- Author: Nikos Kefalakis (nkef@ait.edu.gr) -->
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    targetNamespace="eu:faredge:ea:apd" xmlns:apd="eu:faredge:ea:apd">
+    targetNamespace="eu:faredge:analytics:apd" xmlns:apd="eu:faredge:analytics:apd">
 
 
     <xs:element name="APD">
