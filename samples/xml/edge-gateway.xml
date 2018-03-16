@@ -1,0 +1,29 @@
+<dm:EdgeGateway id="eg://db452f43-5afd-4729-b673-557f155807e1"
+  name="SAjjBvUeEhsnWYVGSzux" namespace="csLdKCYscFCHMYwhdyTO"
+  macAddress="wRkrogjFuciCzzFkZsRy" xmlns:dm="eu:faredge:faredge:dm"
+  xmlns:dsm="eu:faredge:drpp:dsm">
+  <dm:description>EZPxTwcJqrauyLMclccp</dm:description>
+  <dm:Location>
+    <dm:virtualLocation>WhcnVJCJrgAArYNOFDic</dm:virtualLocation>
+  </dm:Location>
+  <dm:AdditionalInformation>llteyjKRtiagQZHSAixI</dm:AdditionalInformation>
+  <dm:AdditionalInformation>QNMxqupcWJoOkpfHpXwp</dm:AdditionalInformation>
+  <dm:DataManifests>
+    <dsm:DSM id="dsm://58114eda-2885-4805-b0fa-fba9fb607ce0"
+      macAddress="jRunBYlFJdfgWjOHdgNv">
+      <dsm:DataSourceDefinitionReferenceID>
+        dsd://5109c09c-f36d-4f75-81e3-f69a5171944b
+      </dsm:DataSourceDefinitionReferenceID>
+      <dsm:DataSourceDefinitionInterfaceParameters>
+        <dsm:Parameter>
+          <dsm:key>bJVnAeVlAsJrcZpWkeGB</dsm:key>
+          <dsm:value>dtWwXlWQcdyIGSonXffcuF</dsm:value>
+        </dsm:Parameter>
+        <dsm:Parameter>
+          <dsm:key>AaWlxowcrUIsYStvkwrG</dsm:key>
+          <dsm:value>jVwizmFsOPjCBbHGOiZP</dsm:value>
+        </dsm:Parameter>
+      </dsm:DataSourceDefinitionInterfaceParameters>
+    </dsm:DSM>
+  </dm:DataManifests>
+</dm:EdgeGateway>

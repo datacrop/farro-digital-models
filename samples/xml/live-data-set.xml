@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dm:LiveDataSet id="lds://b63208a9-3661-4b09-b78f-55f9202a2555"
-  xmlns:dm="eu:faredge:faredgedm">
+  xmlns:dm="eu:faredge:faredge:dm">
   <dm:DataSourceManifestReferenceID>
     dsm://58114eda-2885-4805-b0fa-fba9fb607ce0
   </dm:DataSourceManifestReferenceID>

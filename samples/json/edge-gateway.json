@@ -1,0 +1,35 @@
+"edgeGateway": {
+  "id": "eg://db452f43-5afd-4729-b673-557f155807e1",
+  "name": "SAjjBvUeEhsnWYVGSzux",
+  "namespace": "csLdKCYscFCHMYwhdyTO",
+  "macAddress": "wRkrogjFuciCzzFkZsRy",
+  "description": "EZPxTwcJqrauyLMclccp",
+  "location": {
+    "virtualLocation": "WhcnVJCJrgAArYNOFDic"
+  },
+  "additionalInformation": [
+    "llteyjKRtiagQZHSAixI",
+    "QNMxqupcWJoOkpfHpXwp"
+  ],
+  "dataManifests": {
+    "dsm": [
+      {
+        "id": "dsm://58114eda-2885-4805-b0fa-fba9fb607ce0",
+        "macAddress": "jRunBYlFJdfgWjOHdgNv",
+        "dataSourceDefinitionReferenceID": "dsd://5109c09c-f36d-4f75-81e3-f69a5171944b",
+        "dataSourceDefinitionInterfaceParameters": {
+          "parameter": [
+            {
+              "key": "bJVnAeVlAsJrcZpWkeGB",
+              "value": "dtWwXlWQcdyIGSonXffcuF"
+            },
+            {
+              "key": "AaWlxowcrUIsYStvkwrG",
+              "value": "jVwizmFsOPjCBbHGOiZP"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
