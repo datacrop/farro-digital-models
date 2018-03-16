@@ -1,0 +1,7 @@
+"dcd": {
+  "id": "dcd://b638fae8-fc51-4211-a1df-c159159e0b16",
+  "validFrom": "2018-06-16T19:30:50.0Z",
+  "validTo": "2019-10-07T19:30:50.0Z",
+  "dataSourceManifestReferenceID": "dsm://58114eda-2885-4805-b0fa-fba9fb607ce0",
+  "dataConsumerManifestReferenceID": "dcm://2227394c-8f31-4f16-a8af-edbecc38aae2"
+}

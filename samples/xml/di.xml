@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<di:DI id="di://b4d0379a-0a53-4a9a-8d3b-bfd73fa54929"
+  xmlns:di="eu:faredge:drpp:di">
+  <di:communicationProtocol>XxrInxlPVMAKFJcWVFfK</di:communicationProtocol>
+  <di:Parameters>
+    <di:Parameter name="bJVnAeVlAsJrcZpWkeGB">
+      <di:description>YJpzANXGslSYyYClEwDT</di:description>
+      <di:dataType>tfLDBeeiTLCfALbgimVw</di:dataType>
+      <di:defaultValue>AQGbKAqYFIkyeDPXhkqn</di:defaultValue>
+    </di:Parameter>
+    <di:Parameter name="AaWlxowcrUIsYStvkwrG">
+      <di:description>GbVtOyNSnDqNEdIaKsYy</di:description>
+      <di:dataType>AXgadXcemSZFLYzfCxOq</di:dataType>
+      <di:defaultValue>ZSGMihHjcCEQuDWJuNqx</di:defaultValue>
+    </di:Parameter>
+  </di:Parameters>
+</di:DI>

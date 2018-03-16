@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dsm:DSM id="dsm://58114eda-2885-4805-b0fa-fba9fb607ce0"
+  macAddress="jRunBYlFJdfgWjOHdgNv" xmlns:dsm="eu:faredge:drpp:dsm">
+  <dsm:DataSourceDefinitionReferenceID>
+    dsd://5109c09c-f36d-4f75-81e3-f69a5171944b
+  </dsm:DataSourceDefinitionReferenceID>
+  <dsm:DataSourceDefinitionInterfaceParameters>
+    <dsm:Parameter>
+      <dsm:key>bJVnAeVlAsJrcZpWkeGB</dsm:key>
+      <dsm:value>dtWwXlWQcdyIGSonXffcuF</dsm:value>
+    </dsm:Parameter>
+    <dsm:Parameter>
+      <dsm:key>AaWlxowcrUIsYStvkwrG</dsm:key>
+      <dsm:value>jVwizmFsOPjCBbHGOiZP</dsm:value>
+    </dsm:Parameter>
+  </dsm:DataSourceDefinitionInterfaceParameters>
+</dsm:DSM>
