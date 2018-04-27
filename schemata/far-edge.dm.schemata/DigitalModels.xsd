@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
        
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="eu:faredge:faredgedm"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="eu:faredge:faredge:dm"
     elementFormDefault="qualified" attributeFormDefault="unqualified"
-    xmlns:dm="eu:faredge:faredgedm" xmlns:dcd="eu:faredge:drpp:dcd" xmlns:dsm="eu:faredge:drpp:dsm"
-    xmlns:dcm="eu:faredge:drpp:dcm" xmlns:apd="eu:faredge:analytics:apd" xmlns:dsd="eu:faredge:drpp:dsd"
-    xmlns:dt="eu:faredge:drpp:dk" xmlns:di="eu:faredge:drpp:di"
+    xmlns:dm="eu:faredge:faredge:dm" xmlns:dcd="eu:faredge:drpp:dcd" xmlns:dsm="eu:faredge:drpp:dsm"
+    xmlns:dcm="eu:faredge:drpp:dcm" xmlns:apd="eu:faredge:analytics:apd"
+    xmlns:dsd="eu:faredge:drpp:dsd" xmlns:dk="eu:faredge:drpp:dk" xmlns:di="eu:faredge:drpp:di"
     xmlns:am="eu:faredge:analytics:orchestrator" xmlns:apm="eu:faredge:analytics:apm">
 
 
@@ -24,6 +24,11 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="namespace" type="xs:anyURI">
+                    <xs:annotation>
+                        <xs:documentation>For scope hierarchy.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
                 <xs:element name="description" minOccurs="0" type="xs:string">
                     <xs:annotation>
                         <xs:documentation>Textual description for the FAR-EDGE Digital
@@ -81,7 +86,7 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
                         <xs:sequence>
                             <xs:element maxOccurs="unbounded" minOccurs="0" ref="dsd:DSD"/>
                             <xs:element maxOccurs="unbounded" minOccurs="0" ref="di:DI"/>
-                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="dt:DK"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="dk:DK"/>
                             <xs:element maxOccurs="unbounded" minOccurs="0" ref="apd:APD"/>
                         </xs:sequence>
                     </xs:complexType>
@@ -103,11 +108,6 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
             <xs:attribute name="name" type="xs:string"/>
-            <xs:attribute name="namespace" type="xs:string">
-                <xs:annotation>
-                    <xs:documentation>For scope hierarchy.</xs:documentation>
-                </xs:annotation>
-            </xs:attribute>
         </xs:complexType>
     </xs:element>
 
@@ -120,6 +120,12 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="baseURL" type="xs:anyURI"/>
+                <xs:element name="namespace" type="xs:anyURI">
+                    <xs:annotation>
+                        <xs:documentation>For scope hierarchy.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
                 <xs:element name="description" minOccurs="0" type="xs:string">
                     <xs:annotation>
                         <xs:documentation>Textual description for the FAR-EDGE Edge
@@ -158,11 +164,6 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
             <xs:attribute name="name" type="xs:string"/>
-            <xs:attribute name="namespace" type="xs:string">
-                <xs:annotation>
-                    <xs:documentation>For scope hierarchy.</xs:documentation>
-                </xs:annotation>
-            </xs:attribute>
             <xs:attribute name="macAddress" type="xs:string"/>
         </xs:complexType>
     </xs:element>
@@ -174,20 +175,21 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="DataSourceManifestReferenceID" type="xs:anyURI">
+                    <xs:annotation>
+                        <xs:documentation>The ID of the Data Source Manifest (physical or virtual) these 
+                                    observations refaire to.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element default="false" name="mobile" type="xs:boolean">
+                    <xs:annotation>
+                        <xs:documentation>Identifies if the Edge node is mobile or not. If it is mobile the location field within the observation entity should be provided as well.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
                 <xs:element minOccurs="0" name="timestamp" type="xs:dateTime"/>
                 <xs:element maxOccurs="unbounded" minOccurs="0" ref="dm:observation"/>
             </xs:sequence>
-            <xs:attribute name="DataSourceManifestReferenceID" type="xs:anyURI">
-                <xs:annotation>
-                    <xs:documentation>The ID of the Data Source Manifest (physical or virtual) these 
-                                    observations refaire to.</xs:documentation>
-                </xs:annotation>
-            </xs:attribute>
-            <xs:attribute default="false" name="mobile" type="xs:boolean">
-                <xs:annotation>
-                    <xs:documentation>Identifies if the Edge node is mobile or not. If it is mobile the location field within the observation entity should be provided as well.</xs:documentation>
-                </xs:annotation>
-            </xs:attribute>
+            <xs:attribute name="id" type="xs:anyURI"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="Device">
@@ -215,6 +217,11 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="DataKindReferenceID" type="xs:anyURI">
+                    <xs:annotation>
+                        <xs:documentation>The ID of the Data Kind this observation refaire to.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
                 <xs:element form="qualified" name="timestamp" type="xs:dateTime" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation>The timestamp indicating the instant in which 
@@ -235,11 +242,6 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
             <xs:attribute name="name" type="xs:string"/>
-            <xs:attribute name="DataKindReferenceID" type="xs:anyURI">
-                <xs:annotation>
-                    <xs:documentation>The ID of the Data Kind this observation refaire to.</xs:documentation>
-                </xs:annotation>
-            </xs:attribute>
         </xs:complexType>
     </xs:element>
 

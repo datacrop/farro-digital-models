@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    targetNamespace="eu:faredge:drpp:di" xmlns:dt="eu:faredge:drpp:di">
+    targetNamespace="eu:faredge:drpp:di" xmlns:di="eu:faredge:drpp:di">
 
     <xs:element name="DI">
         <xs:annotation>
@@ -13,7 +13,7 @@
                         <xs:documentation>Specifies the protocol Type (i.e. MQTT, JMS, OPCUA, HTTP ...)</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element ref="dt:Parameters"/>
+                <xs:element ref="di:Parameters"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
         </xs:complexType>
@@ -22,7 +22,7 @@
     <xs:element name="Parameters">
         <xs:complexType>
             <xs:sequence>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="dt:Parameter"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" ref="di:Parameter"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

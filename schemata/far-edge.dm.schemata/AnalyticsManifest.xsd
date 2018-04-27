@@ -2,9 +2,9 @@
 
 <!-- Author: Nikos Kefalakis (nkef@ait.edu.gr) -->
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="eu:faredge:analytics:orchestrator"
-    elementFormDefault="qualified" xmlns:am="eu:faredge:analytics:orchestrator"
-    xmlns:apm="eu:faredge:analytics:apm">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="eu:faredge:analytics:orchestrator" elementFormDefault="qualified"
+    xmlns:am="eu:faredge:analytics:orchestrator" xmlns:apm="eu:faredge:analytics:apm">
 
     <xs:import namespace="eu:faredge:analytics:apm" schemaLocation="AnalyticsProcessorManifest.xsd"/>
 
@@ -14,7 +14,18 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element maxOccurs="unbounded" ref="apm:APM"/>
+                <xs:element name="EdgeGatewayReferenceID" type="xs:anyURI">
+                    <xs:annotation>
+                        <xs:documentation>The ID of the target platform (Edge Gateway) that the Analytics Manifest should be deployed (to be used from the Analytics Open API). If empty the AM is deployed locally (Directly to the Edge Gateway Analytics component).</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="AnalyticsProcessors">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" ref="apm:APM"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
         </xs:complexType>

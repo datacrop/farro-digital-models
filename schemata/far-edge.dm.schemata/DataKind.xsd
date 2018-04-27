@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    targetNamespace="eu:faredge:drpp:dk" xmlns:dt="eu:faredge:drpp:dk">
+    targetNamespace="eu:faredge:drpp:dk" xmlns:dk="eu:faredge:drpp:dk">
 
     <xs:element name="DK">
         <xs:annotation>

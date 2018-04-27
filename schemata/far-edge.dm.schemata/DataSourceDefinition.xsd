@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
     targetNamespace="eu:faredge:drpp:dsd" xmlns:dsd="eu:faredge:drpp:dsd"
-    xmlns:dt="eu:faredge:drpp:dk" xmlns:di="eu:faredge:drpp:di">
+    xmlns:dk="eu:faredge:drpp:dk" xmlns:di="eu:faredge:drpp:di">
 
     <xs:element name="DSD">
         <xs:annotation>
