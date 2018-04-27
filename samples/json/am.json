@@ -1,19 +1,8 @@
-"edgeGateway": {
-  "id": "eg://db452f43-5afd-4729-b673-557f155807e1",
-  "name": "SAjjBvUeEhsnWYVGSzux",
-  "namespace": "csLdKCYscFCHMYwhdyTO",
-  "macAddress": "wRkrogjFuciCzzFkZsRy",
-  "baseURL": "hBFDpnZSaFgpJPoNXvHs",
-  "description": "EZPxTwcJqrauyLMclccp",
-  "location": {
-    "virtualLocation": "WhcnVJCJrgAArYNOFDic"
-  },
-  "additionalInformation": [
-    "llteyjKRtiagQZHSAixI",
-    "QNMxqupcWJoOkpfHpXwp"
-  ],
-  "dataManifests": {
-    "dsm": [
+"am": {
+  "id": "am://9c89c172-195b-445a-afca-fb06a511f8b1",
+  "EdgeGatewayReferenceID": "CZQwQrMnSzTLQveVliuT",
+  "AnalyticsProcessors": {
+    "apm": [
       {
         "id": "dsm://58114eda-2885-4805-b0fa-fba9fb607ce0",
         "macAddress": "jRunBYlFJdfgWjOHdgNv",

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<am:AM id="am://9c89c172-195b-445a-afca-fb06a511f8b1"
+  xmlns:am="eu:faredge:analytics:am" xmlns:apm="eu:faredge:analytics:apm">
+  <am:EdgeGatewayReferenceID>CZQwQrMnSzTLQveVliuT</am:EdgeGatewayReferenceID>
+  <am:AnalyticsProcessors>
+    <apm:APM id="apm://806d2f4a-73e8-4c9b-b4d4-c362b210dd20"
+      xmlns:apm="eu:faredge:analytics:apm">
+      <apm:AnalyticsProcessorDefinitionReferenceID>
+        apd://ee53406f-a113-4278-a910-c8f87703c7e0
+      </apm:AnalyticsProcessorDefinitionReferenceID>
+      <apm:DataSink>
+        <apm:DataSourceManifestReferenceID>
+          dsm://58114eda-2885-4805-b0fa-fba9fb607ce0
+        </apm:DataSourceManifestReferenceID>
+      </apm:DataSink>
+      <apm:DataSources>
+        <apm:DataSource>
+          <apm:DataSourceManifestReferenceID>
+            dsm://0ea9e49f-32ce-43c2-917f-10a6e0af1869
+          </apm:DataSourceManifestReferenceID>
+        </apm:DataSource>
+        <apm:DataSource>
+          <apm:DataSourceManifestReferenceID>
+            dsm://29e21068-3c07-4b81-b462-cc5d625a3bfb
+          </apm:DataSourceManifestReferenceID>
+        </apm:DataSource>
+      </apm:DataSources>
+      <apm:Parameters>
+        <apm:Parameter>
+          <apm:key>IUtMeMPozdONoKiQBRiK</apm:key>
+          <apm:value>dtWwXlWQcdyIGSonXffcuF</apm:value>
+        </apm:Parameter>
+        <apm:Parameter>
+          <apm:key>HBVCGymlbyXJxmySnznk</apm:key>
+          <apm:value>sEJowYnwzhbcPBISzEjD</apm:value>
+        </apm:Parameter>
+      </apm:Parameters>
+    </apm:APM>
+  </am:AnalyticsProcessors>
+</am:AM>
