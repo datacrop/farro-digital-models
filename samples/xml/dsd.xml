@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dsd:DSD id="dsd://5109c09c-f36d-4f75-81e3-f69a5171944b"
-  xmlns:dsd="eu:faredge:drpp:dsd">
+  name="FjOhxFFTBaYOktnYWyIR" xmlns:dsd="eu:faredge:drpp:dsd">
   <dsd:DataInterfaceReferenceID>
     di://b4d0379a-0a53-4a9a-8d3b-bfd73fa54929
   </dsd:DataInterfaceReferenceID>
