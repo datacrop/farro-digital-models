@@ -14,7 +14,8 @@
     <xs:import namespace="eu:faredge:drpp:dcd" schemaLocation="DataChannelDescriptor.xsd"/>
     <xs:import namespace="eu:faredge:drpp:dcm" schemaLocation="DataConsumerManifest.xsd"/>
     <xs:import namespace="eu:faredge:drpp:dsm" schemaLocation="DataSourceManifest.xsd"/>
-    <xs:import namespace="eu:faredge:analytics:apd" schemaLocation="AnalyticsProcessorDefinition.xsd"/>
+    <xs:import namespace="eu:faredge:analytics:apd"
+        schemaLocation="AnalyticsProcessorDefinition.xsd"/>
     <xs:import namespace="eu:faredge:analytics:orchestrator" schemaLocation="AnalyticsManifest.xsd"/>
     <xs:import namespace="eu:faredge:analytics:apm" schemaLocation="AnalyticsProcessorManifest.xsd"/>
 
@@ -91,12 +92,14 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="DataManipulation">
+                <xs:element name="Manifests">
                     <xs:annotation>
-                        <xs:documentation>Digital Models Data Manipulation</xs:documentation>
+                        <xs:documentation>Digital Model Manifest collection (Data Definitions instancies and manipulation)</xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
+                            <xs:element maxOccurs="unbounded" ref="dsm:DSM" minOccurs="0"/>
+                            <xs:element maxOccurs="unbounded" ref="dcm:DCM" minOccurs="0"/>
                             <xs:element maxOccurs="unbounded" minOccurs="0" ref="dcd:DCD"/>
                             <xs:element maxOccurs="unbounded" minOccurs="0" ref="apm:APM"/>
                             <xs:element maxOccurs="unbounded" minOccurs="0" ref="am:AM"/>
@@ -104,7 +107,7 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
                     </xs:complexType>
                 </xs:element>
                 <xs:element ref="dm:EdgeGateway" maxOccurs="unbounded" minOccurs="0"/>
-                <xs:element ref="dm:LiveDataSet" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element ref="dm:Observation" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
             <xs:attribute name="name" type="xs:string"/>
@@ -120,7 +123,8 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="baseURL" type="xs:anyURI"/>
+                <xs:element name="dataRouterAndPreprocessorBaseURL" type="xs:anyURI"/>
+                <xs:element name="edgeAnalyticsEngineBaseURL" type="xs:anyURI"/>
                 <xs:element name="namespace" type="xs:anyURI">
                     <xs:annotation>
                         <xs:documentation>For scope hierarchy.</xs:documentation>
@@ -144,8 +148,18 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element maxOccurs="unbounded" ref="dsm:DSM" minOccurs="0"/>
-                            <xs:element maxOccurs="unbounded" ref="dcm:DCM" minOccurs="0"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="DataSourceManifestReferenceID" type="xs:anyURI">
+                                <xs:annotation>
+                                    <xs:documentation>Edge Gateway Data Source Manifest by referencing a DSM ID</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="DataConsumerManifestReferenceID" type="xs:anyURI">
+                                <xs:annotation>
+                                    <xs:documentation>Edge Gateway Data Consumer Manifest by referencing a DCM ID</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -155,12 +169,21 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="apm:APM"/>
-                            <xs:element maxOccurs="unbounded" minOccurs="0" ref="am:AM"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="AnalyticsProcessorManifestReferenceID" type="xs:anyURI">
+                                <xs:annotation>
+                                    <xs:documentation>Edge Gateway Analytics Processor Manifest by referencing an APM ID</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="unbounded" minOccurs="0"
+                                name="AnalyticsManifestReferenceID" type="xs:anyURI">
+                                <xs:annotation>
+                                    <xs:documentation>Edge Gateway Analytics Manifest (Orchestrator) by referencing an AM ID</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element ref="dm:LiveDataSet" maxOccurs="unbounded" minOccurs="0"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
             <xs:attribute name="name" type="xs:string"/>
@@ -169,69 +192,38 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
     </xs:element>
 
 
-    <xs:element name="LiveDataSet">
+    <xs:element name="Observation">
         <xs:annotation>
             <xs:documentation>A generic type of Data Source Live measurements (physical or virtual)</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="EdgeGatewayReferenceID" type="xs:anyURI"/>
                 <xs:element name="DataSourceManifestReferenceID" type="xs:anyURI">
                     <xs:annotation>
                         <xs:documentation>The ID of the Data Source Manifest (physical or virtual) these 
                                     observations refaire to.</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element default="false" name="mobile" type="xs:boolean">
-                    <xs:annotation>
-                        <xs:documentation>Identifies if the Edge node is mobile or not. If it is mobile the location field within the observation entity should be provided as well.</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-                <xs:element minOccurs="0" name="timestamp" type="xs:dateTime"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" ref="dm:observation"/>
-            </xs:sequence>
-            <xs:attribute name="id" type="xs:anyURI"/>
-        </xs:complexType>
-    </xs:element>
-    <xs:element name="Device">
-        <xs:annotation>
-            <xs:documentation>Logical Device MetaData</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-            <xs:sequence> </xs:sequence>
-            <xs:attribute name="id" type="xs:anyURI"/>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="ProcessingDevices">
-        <xs:annotation>
-            <xs:documentation>Edge Gateway Processing Device (Edge Analytics) capabilities (metadata)</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-            <xs:sequence> </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="observation">
-        <xs:annotation>
-            <xs:documentation>The Node Measurement</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-            <xs:sequence>
                 <xs:element name="DataKindReferenceID" type="xs:anyURI">
                     <xs:annotation>
                         <xs:documentation>The ID of the Data Kind this observation refaire to.</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element form="qualified" name="timestamp" type="xs:dateTime" minOccurs="0">
+                <xs:element minOccurs="0" name="acquisitionTimestamp" type="xs:dateTime">
                     <xs:annotation>
-                        <xs:documentation>The timestamp indicating the instant in which 
-                                        a measurement was acquired</xs:documentation>
+                        <xs:documentation>The timestamp indicating the instant in which a measurement was acquired by the FAR-EDGE system.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element form="qualified" name="collectionTimestamp" type="xs:dateTime"
+                    minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>The timestamp indicating the instant in which a measurement was captured by the sensor.</xs:documentation>
                     </xs:annotation>
                 </xs:element>
                 <xs:element ref="dm:Location" minOccurs="0">
                     <xs:annotation>
-                        <xs:documentation>The location at which the measurement was
-                                        taken if Edge Node's mobile attribute is true</xs:documentation>
+                        <xs:documentation>The location at which the measurement was taken if Edge Node's mobile attribute is true.</xs:documentation>
                     </xs:annotation>
                 </xs:element>
                 <xs:element name="value" type="xs:anyType" minOccurs="1">
@@ -241,7 +233,6 @@ Entity mapping between (Automation, Analytics, Simulation) and (Field Abstractio
                 </xs:element>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
-            <xs:attribute name="name" type="xs:string"/>
         </xs:complexType>
     </xs:element>
 

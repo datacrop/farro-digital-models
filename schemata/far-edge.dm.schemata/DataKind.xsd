@@ -29,7 +29,16 @@
                     </xs:annotation>
                 </xs:element>
             </xs:sequence>
-            <xs:attribute name="id" type="xs:anyURI"/>
+            <xs:attribute name="id" type="xs:anyURI">
+                <xs:annotation>
+                    <xs:documentation>Uniquely identifies the Data Kind as a URI</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="name" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>A human readable name which uniquely identifies the Data Kind.</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
         </xs:complexType>
     </xs:element>
 

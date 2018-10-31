@@ -7,7 +7,8 @@
     xmlns:apd="eu:faredge:analytics:apd">
 
 
-    <xs:import namespace="eu:faredge:analytics:apd" schemaLocation="AnalyticsProcessorDefinition.xsd"/>
+    <xs:import namespace="eu:faredge:analytics:apd"
+        schemaLocation="AnalyticsProcessorDefinition.xsd"/>
 
 
     <xs:element name="APM">
@@ -16,6 +17,7 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
+                <xs:element minOccurs="0" name="description" type="xs:string"/>
                 <xs:element name="AnalyticsProcessorDefinitionReferenceID" type="xs:anyURI">
                     <xs:annotation>
                         <xs:documentation>The Reference ID of the Analytics Processor Definition(APD) this APM is using.</xs:documentation>
@@ -30,6 +32,7 @@
                 </xs:element>
             </xs:sequence>
             <xs:attribute name="id" type="xs:anyURI"/>
+            <xs:attribute name="name" type="xs:string"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="DataSink">
