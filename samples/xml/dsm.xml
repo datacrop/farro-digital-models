@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dsm:DSM id="dsm://58114eda-2885-4805-b0fa-fba9fb607ce0"
-  macAddress="jRunBYlFJdfgWjOHdgNv" xmlns:dsm="eu:faredge:drpp:dsm">
+  name="owjgUMnEGtYMOcvUFULI" macAddress="jRunBYlFJdfgWjOHdgNv"
+  xmlns:dsm="eu:faredge:drpp:dsm">
+  <dsm:description>vPQAHoNVchjopGYVBmCU</dsm:description>
+  <dsm:mobile>true</dsm:mobile>
   <dsm:DataSourceDefinitionReferenceID>
     dsd://5109c09c-f36d-4f75-81e3-f69a5171944b
   </dsm:DataSourceDefinitionReferenceID>

@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dsd:DSD id="dsd://5109c09c-f36d-4f75-81e3-f69a5171944b"
   name="FjOhxFFTBaYOktnYWyIR" xmlns:dsd="eu:faredge:drpp:dsd">
+  <dsd:description>MEkPddqxbzhNcVuGKnFs</dsd:description>
   <dsd:DataInterfaceReferenceID>
     di://b4d0379a-0a53-4a9a-8d3b-bfd73fa54929
   </dsd:DataInterfaceReferenceID>
-  <dsd:DataKindReferenceIDs>
-    <dsd:DataKindReferenceID>
-      dk://e22ea144-c8f7-4018-aa2f-b094202881a5
-    </dsd:DataKindReferenceID>
-    <dsd:DataKindReferenceID>
-      dk://f46c7477-1706-4d0f-bd27-7b1fbdb5a62b
-    </dsd:DataKindReferenceID>
-  </dsd:DataKindReferenceIDs>
+  <dsd:DataKindReferenceID>
+    dk://e22ea144-c8f7-4018-aa2f-b094202881a5
+  </dsd:DataKindReferenceID>
 </dsd:DSD>

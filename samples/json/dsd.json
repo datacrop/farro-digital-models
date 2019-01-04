@@ -1,11 +1,7 @@
 "dsd": {
   "id": "dsd://5109c09c-f36d-4f75-81e3-f69a5171944b",
   "name": "FjOhxFFTBaYOktnYWyIR",
+  "description": "MEkPddqxbzhNcVuGKnFs",
   "dataInterfaceReferenceID": "di://b4d0379a-0a53-4a9a-8d3b-bfd73fa54929",
-  "dataKindReferenceIDs": {
-    "dataKindReferenceID": [
-      "dk://e22ea144-c8f7-4018-aa2f-b094202881a5",
-      "dk://f46c7477-1706-4d0f-bd27-7b1fbdb5a62b"
-    ]
-  }
+  "dataKindReferenceID": "dk://e22ea144-c8f7-4018-aa2f-b094202881a5"
 }

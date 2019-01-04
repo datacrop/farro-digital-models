@@ -1,0 +1,15 @@
+"observation": {
+  "id": "lds://b63208a9-3661-4b09-b78f-55f9202a2555",
+  "edgeGatewayReferenceID": "eg://db452f43-5afd-4729-b673-557f155807e1",
+  "dataSourceManifestReferenceID": "dsm://58114eda-2885-4805-b0fa-fba9fb607ce0",
+  "dataKindReferenceID": "dk://e22ea144-c8f7-4018-aa2f-b094202881a5",
+  "acquisitionTimestamp": "2006-05-04T18:13:51.0Z",
+  "collectionTimestamp": "2006-05-04T18:13:51.0Z",
+  "location": {
+    "geoLocation": {
+      "latitude": "yxgiQVlxYjqoFaOpZlha",
+      "longitude": "SSrmbtaSDEIWfoUNYGAj"
+    }
+  },
+  "value": "WidMxhGJFnVZxamsRngS"
+}

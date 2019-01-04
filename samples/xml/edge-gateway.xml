@@ -2,7 +2,8 @@
   name="SAjjBvUeEhsnWYVGSzux" namespace="csLdKCYscFCHMYwhdyTO"
   macAddress="wRkrogjFuciCzzFkZsRy" xmlns:dm="eu:faredge:faredge:dm"
   xmlns:dsm="eu:faredge:drpp:dsm">
-  <dm:baseURL>hBFDpnZSaFgpJPoNXvHs</dm:baseURL>
+  <dm:dataRouterAndPreprocessorBaseURL>hBFDpnZSaFgpJPoNXvHs</dm:baseURL>
+  <dm:edgeAnalyticsEngineBaseURL>TDZWUlUHViDmNKJnpEBP</dm:baseURL>
   <dm:description>EZPxTwcJqrauyLMclccp</dm:description>
   <dm:Location>
     <dm:virtualLocation>WhcnVJCJrgAArYNOFDic</dm:virtualLocation>
@@ -10,21 +11,11 @@
   <dm:AdditionalInformation>llteyjKRtiagQZHSAixI</dm:AdditionalInformation>
   <dm:AdditionalInformation>QNMxqupcWJoOkpfHpXwp</dm:AdditionalInformation>
   <dm:DataManifests>
-    <dsm:DSM id="dsm://58114eda-2885-4805-b0fa-fba9fb607ce0"
-      macAddress="jRunBYlFJdfgWjOHdgNv">
-      <dsm:DataSourceDefinitionReferenceID>
-        dsd://5109c09c-f36d-4f75-81e3-f69a5171944b
-      </dsm:DataSourceDefinitionReferenceID>
-      <dsm:DataSourceDefinitionInterfaceParameters>
-        <dsm:Parameter>
-          <dsm:key>bJVnAeVlAsJrcZpWkeGB</dsm:key>
-          <dsm:value>dtWwXlWQcdyIGSonXffcuF</dsm:value>
-        </dsm:Parameter>
-        <dsm:Parameter>
-          <dsm:key>AaWlxowcrUIsYStvkwrG</dsm:key>
-          <dsm:value>jVwizmFsOPjCBbHGOiZP</dsm:value>
-        </dsm:Parameter>
-      </dsm:DataSourceDefinitionInterfaceParameters>
-    </dsm:DSM>
+    <dsm:DataSourceManifestReferenceID>dsm://58114eda-2885-4805-b0fa-fba9fb607ce0</dsm:DataSourceManifestReferenceID>
+    <dsm:DataConsumerManifestReferenceID>dcm://2227394c-8f31-4f16-a8af-edbecc38aae2</dsm:DataConsumerManifestReferenceID>
   </dm:DataManifests>
+  <dm:DataManipulation>
+    <dsm:AnalyticsProcessorManifestReferenceID>apm://806d2f4a-73e8-4c9b-b4d4-c362b210dd20</dsm:AnalyticsProcessorManifestReferenceID>
+    <dsm:AnalyticsManifestReferenceID>am://9c89c172-195b-445a-afca-fb06a511f8b1</dsm:AnalyticsManifestReferenceID>
+  </dm:DataManipulation>
 </dm:EdgeGateway>

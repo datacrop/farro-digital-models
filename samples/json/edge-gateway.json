@@ -3,7 +3,8 @@
   "name": "SAjjBvUeEhsnWYVGSzux",
   "namespace": "csLdKCYscFCHMYwhdyTO",
   "macAddress": "wRkrogjFuciCzzFkZsRy",
-  "baseURL": "hBFDpnZSaFgpJPoNXvHs",
+  "dataRouterAndPreprocessorBaseURL": "hBFDpnZSaFgpJPoNXvHs",
+  "edgeAnalyticsEngineBaseURL": "TDZWUlUHViDmNKJnpEBP",
   "description": "EZPxTwcJqrauyLMclccp",
   "location": {
     "virtualLocation": "WhcnVJCJrgAArYNOFDic"
@@ -13,24 +14,19 @@
     "QNMxqupcWJoOkpfHpXwp"
   ],
   "dataManifests": {
-    "dsm": [
-      {
-        "id": "dsm://58114eda-2885-4805-b0fa-fba9fb607ce0",
-        "macAddress": "jRunBYlFJdfgWjOHdgNv",
-        "dataSourceDefinitionReferenceID": "dsd://5109c09c-f36d-4f75-81e3-f69a5171944b",
-        "dataSourceDefinitionInterfaceParameters": {
-          "parameter": [
-            {
-              "key": "bJVnAeVlAsJrcZpWkeGB",
-              "value": "dtWwXlWQcdyIGSonXffcuF"
-            },
-            {
-              "key": "AaWlxowcrUIsYStvkwrG",
-              "value": "jVwizmFsOPjCBbHGOiZP"
-            }
-          ]
-        }
-      }
+    "dataSourceManifestReferenceID": [
+      "dsm://58114eda-2885-4805-b0fa-fba9fb607ce0"
+    ],
+    "dataConsumerManifestReferenceID": [
+      "dcm://2227394c-8f31-4f16-a8af-edbecc38aae2"
+    ]
+  },
+  "dataManipulation": {
+    "analyticsProcessorManifestReferenceID": [
+      "apm://806d2f4a-73e8-4c9b-b4d4-c362b210dd20"
+    ],
+    "analyticsManifestReferenceID": [
+      "am://9c89c172-195b-445a-afca-fb06a511f8b1"
     ]
   }
 }

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <apm:APM id="apm://806d2f4a-73e8-4c9b-b4d4-c362b210dd20"
+  name="wRJxPmSjXnsvvjCErrAp"
   xmlns:apm="eu:faredge:analytics:apm">
+  <apm:description>zrKGubLetEjWPmguPQSC</apm:description>
   <apm:AnalyticsProcessorDefinitionReferenceID>
     apd://ee53406f-a113-4278-a910-c8f87703c7e0
   </apm:AnalyticsProcessorDefinitionReferenceID>

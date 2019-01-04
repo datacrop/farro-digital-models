@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dm:Observation id="lds://b63208a9-3661-4b09-b78f-55f9202a2555"
+  xmlns:dm="eu:faredge:faredge:dm">
+  <dm:EdgeGatewayReferenceID>
+    eg://db452f43-5afd-4729-b673-557f155807e1
+  </dm:EdgeGatewayReferenceID>
+  <dm:DataSourceManifestReferenceID>
+    dsm://58114eda-2885-4805-b0fa-fba9fb607ce0
+  </dm:DataSourceManifestReferenceID>
+  <dm:DataKindReferenceID>
+    dk://e22ea144-c8f7-4018-aa2f-b094202881a5
+  </dm:DataKindReferenceID>
+  <dm:acquisitionTimestamp>2006-05-04T18:13:51.0Z</dm:acquisitionTimestamp>
+  <dm:collectionTimestamp>2006-05-04T18:13:51.0Z</dm:collectionTimestamp>
+  <dm:Location>
+    <dm:geoLocation>
+      <dm:latitude>yxgiQVlxYjqoFaOpZlha</dm:latitude>
+      <dm:longitude>SSrmbtaSDEIWfoUNYGAj</dm:longitude>
+    </dm:geoLocation>
+  </dm:Location>
+  <dm:value>WidMxhGJFnVZxamsRngS</dm:value>
+</dm:Observation>

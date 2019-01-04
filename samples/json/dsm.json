@@ -1,6 +1,9 @@
 "dsm": {
   "id": "dsm://58114eda-2885-4805-b0fa-fba9fb607ce0",
+  "name": "owjgUMnEGtYMOcvUFULI",
   "macAddress": "jRunBYlFJdfgWjOHdgNv",
+  "description": "vPQAHoNVchjopGYVBmCU",
+  "mobile": true,
   "dataSourceDefinitionReferenceID": "dsd://5109c09c-f36d-4f75-81e3-f69a5171944b",
   "dataSourceDefinitionInterfaceParameters": {
     "parameter": [
