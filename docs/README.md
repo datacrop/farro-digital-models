@@ -1,1 +1,0 @@
-# Documentation of FAR-EDGE Digital Models
