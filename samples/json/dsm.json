@@ -4,6 +4,7 @@
   "macAddress": "jRunBYlFJdfgWjOHdgNv",
   "description": "vPQAHoNVchjopGYVBmCU",
   "mobile": true,
+  "edgeGatewayReferenceID": "eg://39e5f456-74ca-4b74-87e7-2af7dd7eee59",
   "dataSourceDefinitionReferenceID": "dsd://5109c09c-f36d-4f75-81e3-f69a5171944b",
   "dataSourceDefinitionInterfaceParameters": {
     "parameter": [

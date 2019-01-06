@@ -4,6 +4,9 @@
   xmlns:dsm="eu:faredge:drpp:dsm">
   <dsm:description>vPQAHoNVchjopGYVBmCU</dsm:description>
   <dsm:mobile>true</dsm:mobile>
+  <apm:EdgeGatewayReferenceID>
+    eg://39e5f456-74ca-4b74-87e7-2af7dd7eee59
+  </apm:EdgeGatewayReferenceID>
   <dsm:DataSourceDefinitionReferenceID>
     dsd://5109c09c-f36d-4f75-81e3-f69a5171944b
   </dsm:DataSourceDefinitionReferenceID>
